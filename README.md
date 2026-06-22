@@ -40,5 +40,6 @@ python network_traffic_analyzer.py
 ## What I want to add next
 
 - A simple Tkinter window so I don't have to scroll through a terminal to read packets
+- Add a filter option so users can choose to capture only TCP, UDP, or ICMP instead of all traffic
 - Flag packets going to known malicious IPs using a free threat-intel list
 - Track which domains are receiving the most traffic using DNS packet analysis
