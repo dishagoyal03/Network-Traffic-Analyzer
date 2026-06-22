@@ -31,21 +31,16 @@ python network_traffic_analyzer.py
 > ⚠️ On Windows I had to run as Administrator, otherwise Scapy doesn't get permission to open raw sockets. Took me embarrassingly long to figure this out.
 
 
-## Technologies Used
+## Tech Used
 
-- Python
+- Python 3
 - Scapy
-- Socket Programming
+- Socket 
+- Datetime
 
-## Applications
 
-- Network Monitoring
-- Traffic Analysis
-- Cyber Security Education
-- Intrusion Detection Support
+## What I want to add next
 
-## Future Scope
-
-- Dashboard Integration
-- Threat Detection Module
-- Real-time Alerts
+- A simple Tkinter window so I don't have to scroll through a terminal to read packets
+- Flag packets going to known malicious IPs using a free threat-intel list
+- Track which domains are receiving the most traffic using DNS packet analysis
