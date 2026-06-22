@@ -13,8 +13,9 @@ I wanted to understand what actually happens at the network level when a device 
 - Real-time packet capture
 - TCP, UDP, and ICMP detection
 - Source and destination IP extraction
-- Protocol analysis
+- Saves all captured packets to a traffic_log.txt file automatically
 - Flags whether traffic is IN or OUT relative to your machine
+- Protocol analysis
 
 ## Technologies Used
 
