@@ -14,9 +14,9 @@ I wanted to understand what actually happens at the network level when a device 
 - TCP, UDP, and ICMP detection
 - Source and destination IP extraction
 - Saves all captured packets to a traffic_log.txt file automatically
-- Prints a summary when you hit Ctrl+C (total packets captured, breakdown by protocol)
 - Flags whether traffic is IN or OUT relative to your machine
-- Protocol analysis
+- Prints a summary when you hit Ctrl+C (total packets captured, breakdown by protocol)
+  
 
 ## Technologies Used
 
