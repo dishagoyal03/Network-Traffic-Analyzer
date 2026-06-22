@@ -31,7 +31,7 @@ python network_traffic_analyzer.py
 > ⚠️ On Windows I had to run as Administrator, otherwise Scapy doesn't get permission to open raw sockets. Took me embarrassingly long to figure this out.
 
 
-## Tech Used
+## Tech used
 
 - Python 3
 - Scapy
