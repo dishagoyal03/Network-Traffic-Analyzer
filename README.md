@@ -43,3 +43,4 @@ python network_traffic_analyzer.py
 - Add a filter option so users can choose to capture only TCP, UDP, or ICMP instead of all traffic
 - Flag packets going to known malicious IPs using a free threat-intel list
 - Track which domains are receiving the most traffic using DNS packet analysis
+- Add proper error handling for network interface issues and Scapy failures
