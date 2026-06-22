@@ -1,7 +1,5 @@
 # Network Traffic Analyzer
 
-## Overview
-
 A Python-based network traffic analysis tool I built to capture and inspect live network packets passing through my machine. It shows you in real time which IPs are talking to each other, through which ports, and whether traffic is coming in or going out.
 
 ## Why I built this
