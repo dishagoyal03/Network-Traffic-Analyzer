@@ -51,6 +51,8 @@ def network_monitoring(pkt):
     elif pkt.haslayer(ICMP) and pkt.haslayer(IP):
         # Determine if it's an incoming or outgoing ICMP packet
         direction = "IN" if pkt[IP].dst == local_ip else "OUT"
+        packet_counts["ICMP"] += 1
+        packet_counts["total"] += 1
         print(f"[{timestamp}] ICMP-{direction}: {len(pkt[ICMP])} Bytes "
               f"IP-Version: {pkt[IP].version} "
               f"SRC-MAC: {pkt.src} DST-MAC: {pkt.dst} "
