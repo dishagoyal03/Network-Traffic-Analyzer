@@ -32,9 +32,9 @@ python network_traffic_analyzer.py
 ## Tech used
 
 - Python 3
-- Scapy
-- Socket 
-- Datetime
+- Scapy- for packet capture and dissection
+- Socket- to find the local machine's IP address (the usual method kept returning 127.0.0.1 so had to use a workaround with connect("8.8.8.8")) 
+- Datetime- for timestamps on each packet
 
 
 ## What I want to add next
