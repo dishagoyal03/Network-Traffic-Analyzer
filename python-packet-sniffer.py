@@ -12,6 +12,7 @@ def get_local_ip():
 
 # Local IP address of the machine
 local_ip = get_local_ip()
+packet_counts = {"TCP": 0, "UDP": 0, "ICMP": 0, "total": 0}
 
 def network_monitoring(pkt):
     # Capture the current timestamp
@@ -28,6 +29,8 @@ def network_monitoring(pkt):
 
         # Determine if it's an incoming or outgoing TCP packet
         direction = "IN" if pkt[ip_layer].dst == local_ip else "OUT"
+        packet_counts["TCP"] += 1
+        packet_counts["total"] += 1
         print(f"[{timestamp}] TCP-{direction}: {len(pkt[TCP])} Bytes "
               f"SRC-MAC: {pkt.src} DST-MAC: {pkt.dst} "
               f"SRC-PORT: {pkt.sport} DST-PORT: {pkt.dport} "
@@ -37,6 +40,8 @@ def network_monitoring(pkt):
     elif pkt.haslayer(UDP) and pkt.haslayer(IP):
         # Determine if it's an incoming or outgoing UDP packet
         direction = "IN" if pkt[IP].dst == local_ip else "OUT"
+        packet_counts["UDP"] += 1
+        packet_counts["total"] += 1
         print(f"[{timestamp}] UDP-{direction}: {len(pkt[UDP])} Bytes "
               f"SRC-MAC: {pkt.src} DST-MAC: {pkt.dst} "
               f"SRC-PORT: {pkt.sport} DST-PORT: {pkt.dport} "
