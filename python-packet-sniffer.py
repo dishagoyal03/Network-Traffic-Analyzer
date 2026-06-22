@@ -50,7 +50,12 @@ def network_monitoring(pkt):
               f"IP-Version: {pkt[IP].version} "
               f"SRC-MAC: {pkt.src} DST-MAC: {pkt.dst} "
               f"SRC-IP: {pkt[IP].src} DST-IP: {pkt[IP].dst}")
-
+    with open("traffic_log.txt", "a") as log:
+        log.write(f"[{timestamp}] {pkt.summary()}\n")
 if __name__ == '__main__':
     print(f"Starting network monitoring on local IP: {local_ip}")
-    sniff(prn=network_monitoring)
+    print("Logging packets to traffic_log.txt")
+    try:
+        sniff(prn=network_monitoring)
+    except KeyboardInterrupt:
+        print("\nStopped monitoring.")
