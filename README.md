@@ -8,8 +8,8 @@ I wanted to understand what actually happens at the network level when a device 
 
 ## Features
 
-- Real-time packet capture
-- TCP, UDP, and ICMP detection
+- Captures network packets live as they pass through the machine
+- Identifies and handles TCP, UDP, and ICMP protocols separately
 - Source and destination IP extraction
 - Saves all captured packets to a traffic_log.txt file automatically
 - Flags whether traffic is IN or OUT relative to your machine
@@ -31,8 +31,8 @@ python network_traffic_analyzer.py
 
 ## Tech used
 
-- Python 3
-- Scapy- for packet capture and dissection
+- Python 3- the entire project is written in python 3
+- Scapy- for packet capture and protocol dissection
 - Socket- to find the local machine's IP address (the usual method kept returning 127.0.0.1 so had to use a workaround with connect("8.8.8.8")) 
 - Datetime- for timestamps on each packet
 
