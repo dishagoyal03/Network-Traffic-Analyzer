@@ -18,6 +18,19 @@ I wanted to understand what actually happens at the network level when a device 
 - Prints a summary when you hit Ctrl+C (total packets captured, breakdown by protocol)
   
 
+## Setup
+
+Needs Python 3. Run Command Prompt as Administrator before executing the script, otherwise Scapy cannot access raw network interfaces.
+
+pip install -r requirements.txt
+
+Then run Command Prompt as Administrator and type:
+
+python network_traffic_analyzer.py
+
+> ⚠️ On Windows I had to run as Administrator, otherwise Scapy doesn't get permission to open raw sockets. Took me embarrassingly long to figure this out.
+
+
 ## Technologies Used
 
 - Python
