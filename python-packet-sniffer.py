@@ -6,6 +6,8 @@ import datetime
 
 def get_local_ip():
     # Get the local network IP address of the host
+def network_monitoring(pkt):
+    # Captu
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
         s.connect(("8.8.8.8", 80))
         return s.getsockname()[0]
@@ -13,9 +15,7 @@ def get_local_ip():
 # Local IP address of the machine
 local_ip = get_local_ip()
 packet_counts = {"TCP": 0, "UDP": 0, "ICMP": 0, "total": 0}
-
-def network_monitoring(pkt):
-    # Capture the current timestamp
+re the current timestamp
     timestamp = datetime.datetime.now()
 
     # Check for TCP packets with IP or IPv6 layers
@@ -65,4 +65,6 @@ if __name__ == '__main__':
     try:
         sniff(prn=network_monitoring)
     except KeyboardInterrupt:
-        print("\nStopped monitoring.")
+        print(f"\nStopped monitoring.")
+        print(f"Total packets captured: {packet_counts['total']}")
+        print(f"TCP: {packet_counts['TCP']} | UDP: {packet_counts['UDP']} | ICMP: {packet_counts['ICMP']}")
