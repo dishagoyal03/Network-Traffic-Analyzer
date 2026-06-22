@@ -4,6 +4,7 @@ import socket
 import datetime
 
 def get_local_ip():
+    # gethostname() was returning 127.0.0.1 on my laptop, this workaround fixes it
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
         s.connect(("8.8.8.8", 80))
         return s.getsockname()[0]
@@ -33,7 +34,8 @@ def network_monitoring(pkt):
         direction = "IN" if pkt[IP].dst == local_ip else "OUT"
         packet_counts["ICMP"] += 1
         packet_counts["total"] += 1
-        print(f"[{timestamp}] ICMP-{direction}: {len(pkt[ICMP])} Bytes IP-Version: {pkt[IP].version} SRC-MAC: {pkt.src} DST-MAC: {pkt.dst} SRC-IP: {pkt[IP].src} DST-IP: {pkt[IP].dst}")
+        print(f"[{timestamp}] ICMP-{direction}: {len(pkt[ICMP])} Bytes IP-Version: {pkt[IP].version} SRC-MAC: {pkt.src} DST-MAC: {pkt.dst} SRC-IP: {pkt[IP].src} DST-IP: {pkt[IP].dst}")    
+    # logging every packet to a file so output doesn't get lost after closing terminal
     with open("traffic_log.txt", "a") as log:
         log.write(f"[{timestamp}] {pkt.summary()}\n")
 
